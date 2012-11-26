@@ -12,9 +12,8 @@
 ;;;; See file COPYING for details.
 ;;;;
 ;;;; Author: Moskvitin Andrey <archimag@gmail.com>
-;;;;
-;;;; FreeBSD version: Solomennikov Dmitry <dmitrys99@mail.ru>
-;;;;
+
+(setf sb-impl::*default-external-format* :utf-8)
 
 (defpackage #:sbcl.daemon
   (:use #:cl

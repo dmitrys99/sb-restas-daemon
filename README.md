@@ -3,7 +3,7 @@
 For English text see below
 
 Запуск связки Hunchentoot + RESTAS на FreeBSD.
-На основе restas-daemon.lisp, сделанного Archimag'ом для Linux,
+На основе [restas-daemon.lisp](https://github.com/archimag/restas/blob/master/contrib/restas-daemon.lisp), сделанного Archimag'ом для Linux,
 подготовлен механизм демонизации RESTAS для FreeBSD.
 
 Демонизация делается при помощи пакета SB-DAEMON Nikodemus Siivola.
@@ -34,6 +34,9 @@ For English text see below
    системы.
    
 # How start the things?
+  
+  Start your Hunchentoot + RESTAS system.
+  Based on Archimag's [restas-daemon.lisp](https://github.com/archimag/restas/blob/master/contrib/restas-daemon.lisp).
 
 1. Make sure your system can be started with Quicklisp:
    (your system refered as "bates")
