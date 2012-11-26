@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: bates
+# REQUIRE: NETWORKING SERVERS DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bates"
+
+rcvar=`set_rcvar`
+
+start_cmd="start"
+stop_cmd="stop"
+restart_cmd="restart"
+
+restas_dir="/usr/local/etc/restas"
+sbcl_cmd="sbcl --noinform --no-userinit --no-sysinit --load ${restas_dir}/restas-daemon.lisp ${restas_dir}/${name}.conf"
+
+load_rc_config $name
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+
+start()
+{
+    ${sbcl_cmd} start
+}
+
+stop()
+{
+    ${sbcl_cmd} stop
+}
+
+restart()
+{
+    ${sbcl_cmd} restart
+}
+
+run_rc_command "$1"
+
